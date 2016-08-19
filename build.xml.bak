@@ -39,5 +39,13 @@
     ** compile - complies the source tree
     **********************************************************
     -->
+    <target name="compile" depends="init">
+        <echo message="compiling sources for  ${plugin.jar} ... "/>
+        <javac classpath="${josm}" debug="true" destdir="${plugin.build.dir}" includeAntRuntime="false">
+            <compilerarg value="-Xlint:deprecation"/>
+            <compilerarg value="-Xlint:unchecked"/>
+            <src path="src" />
+        </javac>
+    </target>
   
 </project>
